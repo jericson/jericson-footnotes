@@ -80,7 +80,7 @@ selection), this editor creates an example text that's different from the first 
                 var converter2 = new Markdown.Converter();
 
                 converter2.hooks.chain("preConversion", function (text) {
-                    return text.replace(/\b(a\w*)/gi, "*$1*");
+                    return text.replace(/[bg (w+) (\d+)]/gi, "http://www.biblegateway.com/passage/?search=$1+$2");
                 });
 
                 converter2.hooks.chain("plainLinkText", function (url) {
