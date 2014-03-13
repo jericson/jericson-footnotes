@@ -84,7 +84,7 @@ selection), this editor creates an example text that's different from the first 
                 var converter2 = new Markdown.Converter();
 
                 converter2.hooks.chain("preConversion", function (text) {
-                  return text.replace(/\[bg (\w+) (\d+)(:\d+)? (\w+)?\]/g, "[$1 $2$3](http://www.biblegateway.com/passage/?search=$1+$2$3&version=$4)");
+                  return text.replace(/\[bg\b(\w+)\b(\d+)(:\d+)?( *\w+)?\]/g, "[$1 $2$3](http://www.biblegateway.com/passage/?search=$1+$2$3&version=$4)");
                 });
 
                 converter2.hooks.chain("plainLinkText", function (url) {
